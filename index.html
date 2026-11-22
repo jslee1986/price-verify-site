@@ -214,6 +214,7 @@ function card(c) {
   const badge = c.is_window_low
     ? `<span class="badge low">관측 기간 최저 · ${c.days_observed}일 기록</span>`
     : c.origin === 'goldbox' ? `<span class="badge gb">쿠팡 골드박스 · 관측 ${c.days_observed}일째</span>`
+    : c.origin === 'best' ? `<span class="badge gb">쿠팡 카테고리 베스트 · 관측 ${c.days_observed}일째</span>`
     : `<span class="badge">관측 ${c.days_observed}일째</span>`;
   const offers = c.offers || [];
   const bestIdx = offers.findIndex(o => o.is_fresh && o.base_price === c.current_best);
